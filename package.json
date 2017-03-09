@@ -1,0 +1,43 @@
+{
+  "name": "krewcumber",
+  "version": "0.1.0",
+  "description": "",
+  "main": "step_definitions/index.js",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "chimp": "0.47.2",
+    "http-server": "^0.9.0",
+    "mocha": "3.2.0",
+    "npm-run-all": "4.0.2",
+    "sinon": "1.17.7",
+    "sinon-chai": "2.8.0",
+    "wait-on": "2.0.2"
+  },
+  "scripts": {
+    "chimp": "chimp example.chimp.config.js",
+    "test": "mocha \"step_definitions/**/*.spec.js\"",
+    "test:acceptance": " npm-run-all -p -r web test:webdriver",
+    "test:webdriver": "npm-run-all wait-on:server chimp",
+    "wait-on:server": "wait-on http://localhost:8080",
+    "web": "http-server test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudokrew/krewcumber.git"
+  },
+  "keywords": [
+    "webdriver",
+    "cucumber",
+    "chimpjs"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudokrew/krewcumber/issues"
+  },
+  "homepage": "https://github.com/sudokrew/krewcumber#readme"
+}
