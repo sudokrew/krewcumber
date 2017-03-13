@@ -7,7 +7,11 @@ module.exports = function () {
     return navigation.location.assertAtLocation(browser, url);
   });
 
-  this.Then(/^The "([^"]*)" input should be "([^"]*)"$/, function (inputReference, value) {
+  this.Then(/^the "([^"]*)" field should be "([^"]*)"$/, function (inputReference, value) {
     return form.input.assertInputValue(browser, inputReference, value);
+  });
+
+  this.Then(/^the "([^"]*)" field should( not)? be required$/, function (inputReference, isNotRequired) {
+    return form.input.assertInputRequired(browser, inputReference, !isNotRequired);
   });
 }
