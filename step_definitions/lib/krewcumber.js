@@ -15,10 +15,13 @@ module.exports = function krewcumber(browser) {
       const textSelector = `//*[text()='${text}']`;
       return clickElement(browser, textSelector);
     },
+    /**
+     * Asserts that the browser is at the specified URI
+     * Resolves absolute paths to wdio BASE_URL
+     * @param {String} uri
+     */
     assertAtLocation(uri) {
       return assertAtLocation(uri);
     }
   };
 };
-
-krewcumber(browser).assertAtLocation();
