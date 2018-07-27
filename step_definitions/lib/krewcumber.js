@@ -21,7 +21,7 @@ module.exports = function krewcumber(browser) {
      * @param {String} uri
      */
     assertAtLocation(uri) {
-      return assertAtLocation(uri);
+      return assertAtLocation(browser, uri);
     }
   };
 };
