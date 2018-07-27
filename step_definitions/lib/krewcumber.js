@@ -1,5 +1,8 @@
 const { clickElement } = require("./interaction");
-const { assertAtLocation } = require("./navigation/location");
+const {
+  assertAtLocation,
+  setBrowserLocation
+} = require("./navigation/location");
 
 /**
  *
@@ -7,6 +10,9 @@ const { assertAtLocation } = require("./navigation/location");
  */
 module.exports = function krewcumber(browser) {
   return {
+    setBrowserLocation(uri) {
+      return setBrowserLocation(uri);
+    },
     /**
      * Clicks an element on the page based on text
      * @param {String} text
