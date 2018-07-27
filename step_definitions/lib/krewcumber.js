@@ -1,4 +1,5 @@
 const { clickElement } = require("./interaction");
+const { assertAtLocation } = require("./navigation/location");
 
 /**
  *
@@ -13,6 +14,11 @@ module.exports = function krewcumber(browser) {
     click(text) {
       const textSelector = `//*[text()='${text}']`;
       return clickElement(browser, textSelector);
+    },
+    assertAtLocation(uri) {
+      return assertAtLocation(uri);
     }
   };
 };
+
+krewcumber(browser).assertAtLocation();
