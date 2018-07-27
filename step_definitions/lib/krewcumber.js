@@ -11,7 +11,7 @@ const {
 module.exports = function krewcumber(browser) {
   return {
     setBrowserLocation(uri) {
-      return setBrowserLocation(uri);
+      return setBrowserLocation(browser, uri);
     },
     /**
      * Clicks an element on the page based on text
