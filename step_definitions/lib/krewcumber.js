@@ -12,7 +12,7 @@ module.exports = function krewcumber(browser) {
      */
     click(text) {
       const textSelector = `//*[text()='${text}']`;
-      return clickElement(browser, text);
+      return clickElement(browser, textSelector);
     }
   };
 };
